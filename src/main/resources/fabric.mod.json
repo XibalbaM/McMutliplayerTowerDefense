@@ -1,0 +1,33 @@
+{
+    "schemaVersion": 1,
+    "id": "mutliplayertowerdefense",
+    "version": "${version}",
+    "name": "Mutliplayer Tower Defense",
+    "description": "A mod to allow you to play tower defense on your server, without the payer having to install anything! The client mod is optional. ",
+    "authors": [],
+    "contact": {},
+    "license": "GPL-3.0",
+    "icon": "assets/mutliplayertowerdefense/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "client": [
+            "fr.xibalba.minecraft.mutliplayertowerdefense.client.MultiTowerDefenseClient"
+        ],
+        "main": [
+            "fr.xibalba.minecraft.mutliplayertowerdefense.MultiTowerDefense"
+        ]
+    },
+    "mixins": [
+        "mutliplayertowerdefense.mixins.json",
+        {
+            "config": "mutliplayertowerdefense.client.mixins.json",
+            "environment": "client"
+        }
+    ],
+    "depends": {
+        "fabricloader": ">=${loader_version}",
+        "fabric-language-kotlin": ">=${kotlin_loader_version}",
+        "fabric": "*",
+        "minecraft": "${minecraft_version}"
+    }
+}
